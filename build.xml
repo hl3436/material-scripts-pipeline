@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+
+<project name="scripts" default="help" xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+    <property name="obfuscator.cfg.name" value="obfuscation.scripts.cfg" />
+    <import file="build-core.xml"/>
+    
+    <property name="app.name" value="scripts"/>
+    <property name="app.version" value="0.1"/>
+    <property name="release.name" value="${app.name}-release-${current.date}-${app.version}"/>
+    <property name="manual.name" value="${app.name}-UserManual.pdf"/>
+    
+    <property name="src.main.name" value="edu.columbia.dsi.SCRIPTS"/>
+    <property name="test.main.name" value="edu.columbia.dsi.SCRIPTSTest"/>
+    <property name="max.heap.size" value="-Xmx16g"/>
+    
+    <!--
+     Note: Before compiling the code, ensure that all library dependencies have been
+     specified in the classpath below.
+     -->
+    <path id="maven-ant-tasks.classpath" path="lib/maven-ant-tasks-2.1.3.jar" />
+    <typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="antlib:org.apache.maven.artifact.ant" classpathref="maven-ant-tasks.classpath" />
+    <artifact:dependencies pathId="dependency.classpath" filesetId="dependency.fileset">
+        <dependency groupId="log4j" artifactId="log4j" version="1.2.17" scope="compile"/>
+        <dependency groupId="org.json" artifactId="json" version="20180130" scope="compile"/>
+        <dependency groupId="commons-io" artifactId="commons-io" version="2.4" scope="compile"/>
+        <dependency groupId="commons-cli" artifactId="commons-cli" version="1.2" scope="compile"/>
+        <dependency groupId="junit" artifactId="junit" version="4.11" scope="test"/>
+        <dependency groupId="com.thaiopensource" artifactId="trang" version="20091111" scope="compile"/>
+    </artifact:dependencies>
+    
+    
+    <!-- dependencies for compilation -->
+    <path id="classpath.base">
+        <path refid="dependency.classpath"/>
+        <pathelement path="${classes.dir}"/>
+        <fileset dir="${lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+        <pathelement path="${config.dir}"/>
+        <pathelement path="${resources.dir}"/>
+        <pathelement path="${work.dir}"/>
+    </path>
+    
+    <!-- dependencies for test compilation -->
+    <path id="classpath.test">
+        <path refid="classpath.base"/>
+        <fileset dir="lib">
+            <exclude name="ant-1.7.0.jar"/>
+        </fileset>
+        <pathelement path="${test.dir}/edu/columbia/dsi"/>
+    </path>
+    
+    <target name="clean">
+        <echo message="cleaning previously generated files..."/>
+        <delete dir="${classes.dir}"/>
+        <delete dir="${dist.dir}"/>
+        <delete dir="${javadoc.dir}"/>
+        <delete dir="${apidoc.dir}"/>
+        <delete dir="${test.reports.dir}"/>
+        <delete>
+            <fileset dir="${lib.dir}" includes="*.jar" excludes="commons-chain-1.2.jar, commons-digester-1.8.jar, maven-ant-tasks-2.1.3.jar"/>
+        </delete>
+    </target>
+    
+    
+    
+    
+    
+</project>
+

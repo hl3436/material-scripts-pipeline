@@ -1,0 +1,1 @@
+This directory contains all of the resources required by the system components

@@ -1,0 +1,16 @@
+[general]
+skip_location=Language_Identification_location;;Domain_Identification_location;;KWS_location
+clean=true
+
+[indri]
+memory=512m
+normalize=true
+### Do not midify the following unless you are sure what you are doing ###
+### Keep empty fields ###
+corpus_class=trectext
+field=TEXT,s
+offsetannotationhint=unordered
+annotations=
+metadata=
+stemmer=
+stopper=

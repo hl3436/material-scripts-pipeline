@@ -1,0 +1,19 @@
+#Porter stemmer + no stopwords
+
+[general]
+#Skip all locations except MT
+skip_location=Language_Identification_location;;Domain_Identification_location;;source_location;;SentSplitter_location;;Morpohological_Analysis_location;;ASR_location;;KWS_location
+clean=true
+
+[indri]
+memory=512m
+normalize=true
+### Do not midify the following unless you are sure what you are doing ###
+### Keep empty fields ###
+corpus_class=trectext
+field=TEXT,s
+offsetannotationhint=unordered
+annotations=
+metadata=
+stopper=
+stemmer=porter
