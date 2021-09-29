@@ -2,12 +2,16 @@
 
 This repository contains the source code for the executive software that runs other SCRIPTS components.
 
+## System Requirements
+- RAM: 100GB
+- GPU RAM: 16GB per GPU
+- Minimum NVIDIA GPU Driver: 460.32.03
 
 ## Installation
 
 ### Downloading SCRIPTS docker images
 
-Following files are required to run system on Farsi:
+Following files are required to run the system on Farsi data:
 - `scripts1.tar` (198.3 GB)
 - `scripts2.tar` (98.3 GB)
 - `scripts3.tar` (163.9 GB)
@@ -51,9 +55,9 @@ SOME_WORKSPACE
 └── properties
     └── scripts.properties
 ```
-- `configs`: should contain configuration files. Example configuration files for each language are provided under `example/configs` directory
-- `NIST-data`: should contain input data in material format. Intermediate process data is also stored in this directory
-- `propertis/scripts.properties`: system wide configuration file that specifies versions, GPU resources, etc. Example `scripts.properties` is provided under `example/properties`
+- `configs`: should contain configuration files. Example configuration files for each language are provided under `example/configs` directory.
+- `NIST-data`: should contain input data in material format. Intermediate process data is also stored in this directory.
+- `propertis/scripts.properties`: system wide configuration file that specifies versions, GPU resources, etc. Example `scripts.properties` is provided under `example/properties`.
 
 
 ### Run
@@ -66,3 +70,17 @@ $ docker run --rm -it --name scripts-pipeline --gpus all \
     -v $SCRIPTS_WORKSPACE/properties/scripts.properties:/app/scripts-release-20210929-0.1/config/scripts.properties \
     scripts-pipeline:v1.5 $SCRIPTS_WORKSPACE
 ```
+
+
+
+## Compontents
+### Source Codes
+- materila-asr (https://github.com/ondrejklejch/material-asr)
+- material-edinmt (https://github.com/EdinburghNLP/material-edinmt)
+- material-umdnmt (https://github.com/umdxling/material-umdnmt)
+- material-umdsmt (https://github.com/umdxling/material-umdsmt)
+- morphological analyzer (https://github.com/rnd2110/SCRIPTS_Morphological_Analyzer)
+- summarizer (https://github.com/eturcan/scripts)
+- clir, kws, nnltm
+    - https://gitlab.umiacs.umd.edu/petra/material-docker
+    - https://gitlab.umiacs.umd.edu/petra/material
