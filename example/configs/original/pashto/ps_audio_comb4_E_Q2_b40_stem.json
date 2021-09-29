@@ -1,0 +1,101 @@
+{
+    "description": {
+        "tags": "no_tag"
+    },
+    "data_collection": {
+        "source": "audio",
+        "annotation": [],
+        "collections": [
+            "2C/IARPA_MATERIAL_OP1-2C/EVAL"
+        ],
+        "data_store_structure": [
+            "data_structrue_store/data_store_structure.20210502_220838.txt"
+        ]
+    },
+    "matcher": {
+        "configurations": [
+            {
+                "index_type": "PSQ_tokenized-normalized+panlex+opus+berk+pcrawl+bbn+ted_part_flat",
+                "type": "bbn_text_fast",
+                "format": "tsv",
+                "cutoff": 300,
+                "config_name": "psq",
+                "indexes": [
+                    "2C/IARPA_MATERIAL_OP1-2C/EVAL/audio/index_store/indexing-umd-v6.1/indexing_params_v1.0/audio/asr_store/material-asr-ps-v8.1/best/indri_T_N"
+                ],
+                "aqwv": 0.8,
+                "sto_threshold": 0.0,
+                "sto_gamma": 1.0
+            },
+            {
+                "index_type": "words_part_flat",
+                "type": "indri",
+                "format": "tsv",
+                "cutoff": 300,
+                "config_name": "edinmt",
+                "indexes": [
+                    "2C/IARPA_MATERIAL_OP1-2C/EVAL/audio/index_store/indexing-umd-v6.1/indexing_params_porter_stemmer_v2.0/audio/mt_store/scriptsmt-systems-v13_material-asr-ps-v8.1/best/indri_T_N"
+                ],
+                "aqwv": 0.7,
+                "sto_threshold": 0.0,
+                "sto_gamma": 1.0
+            },
+            {
+                "index_type": "words_part_flat",
+                "type": "indri",
+                "format": "tsv",
+                "cutoff": 300,
+                "config_name": "smt",
+                "indexes": [
+                    "2C/IARPA_MATERIAL_OP1-2C/EVAL/audio/index_store/indexing-umd-v6.1/indexing_params_v1.0/audio/mt_store/umd-smt-v2.9.4_material-asr-ps-v8.1/best/indri_T_N"
+                ],
+                "aqwv": 0.5,
+                "sto_threshold": 0.0,
+                "sto_gamma": 1.0
+            },
+            {
+                "index_type": "words_part_flat",
+                "type": "indri",
+                "format": "tsv",
+                "cutoff": 300,
+                "config_name": "umdnmt",
+                "indexes": [
+                    "2C/IARPA_MATERIAL_OP1-2C/EVAL/audio/index_store/indexing-umd-v6.1/indexing_params_v1.0/audio/mt_store/umd-nmt-v5.0_material-asr-ps-v8.1/best/indri_T_N"
+                ],
+                "aqwv": 0.6,
+                "sto_threshold": 0.0,
+                "sto_gamma": 1.0
+            }
+        ],
+        "version": "matching-umd:v15.4"
+    },
+    "evidence_combination": {
+	"cutoff_type": "average-clip",
+        "filtering": "",
+        "cutoff": 8,
+        "score_type": "probability",
+        "version": "evidence-combination:v13.1",
+        "sto_combination_threshold": 0.048,
+        "type": "sto",
+        "clip": 21,
+        "qst_gamma": 1.0,
+        "qst_delta": 1.7
+    },
+    "query_processor": {
+        "target_language": "ps",
+        "query_list_path": [
+            "2C/IARPA_MATERIAL_OP1-2C/query_store/query-analyzer-umd-v13.0/QUERY2"
+        ],
+        "version": "query-analyzer-umd:v16.0"
+    },
+    "submission_type": "contrastive",
+    "evaluator": {
+        "min_relevance": [
+            0,
+            1
+        ],
+        "beta": "40",
+        "query_type": "all",
+        "version": "evaluation:v8.19"
+    }
+}

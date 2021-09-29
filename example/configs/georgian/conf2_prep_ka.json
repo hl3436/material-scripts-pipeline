@@ -1,0 +1,35 @@
+{
+    "mode": "index",
+    "indexer": {
+        "indri_parameters": [
+            "indexing_params_porter_stemmer_v2.0.txt",
+            "indexing_params_v1.0.txt"
+        ]
+    },
+    "corpora": {
+        "root_absolute_path": "/local/nlp/data/bundle",
+        "relative_path": "NIST-data",
+        "queries": [
+            {
+                "query_name": "3B/IARPA_MATERIAL_OP2-3B/QUERY2/query_list.tsv",
+                "language": "ka"
+            }
+        ],
+        "collections": [
+            {
+                "corpus_name": "3B/IARPA_MATERIAL_OP2-3B/EVAL",
+                "source_location": "text/src",
+                "meta_data_location": "text/metadata/metadata.tsv",
+                "type": "text",
+                "language": "ka"
+            },
+            {
+                "corpus_name": "3B/IARPA_MATERIAL_OP2-3B/EVAL",
+                "source_location": "audio/src",
+                "meta_data_location": "audio/metadata/metadata.tsv",
+                "type": "audio",
+                "language": "ka"
+            }
+        ]
+    }
+}

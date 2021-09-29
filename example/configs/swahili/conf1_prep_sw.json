@@ -1,0 +1,29 @@
+{
+    "mode": "preprocess",
+    "corpora": {
+        "root_absolute_path": "/local/nlp/data/bundle",
+        "relative_path": "NIST-data",
+        "queries": [
+            {
+                "query_name": "1A/IARPA_MATERIAL_BASE-1A/QUERY3/query_list.tsv",
+                "language": "sw"
+            }
+        ],
+        "collections": [
+            {
+                "corpus_name": "1A/IARPA_MATERIAL_BASE-1A/EVAL3",
+                "source_location": "text/src",
+                "meta_data_location": "text/metadata/metadata.tsv",
+                "type": "text",
+                "language": "sw"
+            },
+            {
+                "corpus_name": "1A/IARPA_MATERIAL_BASE-1A/EVAL3",
+                "source_location": "audio/src",
+                "meta_data_location": "audio/metadata/metadata.tsv",
+                "type": "audio",
+                "language": "sw"
+            }
+        ]
+    }
+}

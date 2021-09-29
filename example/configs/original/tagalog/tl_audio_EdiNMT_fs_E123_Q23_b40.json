@@ -1,0 +1,60 @@
+{
+    "description": {
+        "tags": "no_tag"
+    },
+    "data_collection": {
+        "source": "audio",
+        "annotation": [],
+        "collections": [
+            "1B/IARPA_MATERIAL_BASE-1B/EVAL1",
+            "1B/IARPA_MATERIAL_BASE-1B/EVAL2",
+            "1B/IARPA_MATERIAL_BASE-1B/EVAL3"
+        ],
+        "data_store_structure": [
+            "data_structrue_store/data_store_structure.20210502_220838.txt"
+        ]
+    },
+    "matcher": {
+        "configurations": [
+            {
+                "index_type": "words_part_flat",
+                "type": "indri",
+                "format": "tsv",
+                "cutoff": 300,
+                "config_name": "no_name",
+                "indexes": [
+			"1B/IARPA_MATERIAL_BASE-1B/EVAL1/audio/index_store/indexing-umd-v6.1/indexing_params_porter_stemmer_v2.0/audio/mt_store/scriptsmt-systems-v14_material-asr-tl-v8.1/best/indri_T_N",
+			"1B/IARPA_MATERIAL_BASE-1B/EVAL2/audio/index_store/indexing-umd-v6.1/indexing_params_porter_stemmer_v2.0/audio/mt_store/scriptsmt-systems-v14_material-asr-tl-v8.1/best/indri_T_N",
+			"1B/IARPA_MATERIAL_BASE-1B/EVAL3/audio/index_store/indexing-umd-v6.1/indexing_params_porter_stemmer_v2.0/audio/mt_store/scriptsmt-systems-v14_material-asr-tl-v8.1/best/indri_T_N"
+                ]
+            }
+        ],
+        "version": "matching-umd:v15.4"
+    },
+    "evidence_combination": {
+        "cutoff_type": "fixed",
+        "cutoff": 2,
+        "type": "borda",
+        "filtering": "",
+        "version": "evidence-combination:v13.1"
+    },
+    "query_processor": {
+        "target_language": "tl",
+        "query_list_path": [
+            "1B/IARPA_MATERIAL_BASE-1B/query_store/query-analyzer-umd-v13.0/QUERY2",
+            "1B/IARPA_MATERIAL_BASE-1B/query_store/query-analyzer-umd-v13.0/QUERY3"
+        ],
+        "version": "query-analyzer-umd:v13.0"
+    },
+    "submission_type": "contrastive",
+    "evaluator": {
+        "min_relevance": [
+            0,
+            1
+        ],
+        "beta": "40",
+        "query_type": "all",
+        "version": "evaluation:v8.19"
+    }
+}
+
