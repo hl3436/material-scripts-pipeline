@@ -83,4 +83,4 @@ $ docker run --rm -it --name scripts-pipeline --gpus all \
 - summarizer (https://github.com/eturcan/scripts)
 - clir, kws, nnltm
     - https://gitlab.umiacs.umd.edu/petra/material-docker
-    - https://gitlab.umiacs.umd.edu/petra/material
+    - https://gitlab.umiacs.umd.edu/srnair/material
