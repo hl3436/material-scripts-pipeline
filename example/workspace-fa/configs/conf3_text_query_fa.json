@@ -1,0 +1,114 @@
+{
+    "mode": "querysearch",
+    "data_collection": {
+        "source": "text",
+        "collections": [
+            "3S/IARPA_MATERIAL_OP2-3S/EVAL/"
+        ],
+        "annotation": [],
+        "data_store_structure": [
+            "data_structrue_store/data_store_structure.20210923_233546.txt"
+        ]
+    },
+    "description": {
+        "tags": "no_tag"
+    },
+    "evidence_combination": {
+        "cutoff_type": "average-clip",
+        "filtering": "",
+        "cutoff": 27,
+        "score_type": "probability",
+        "version": "evidence-combination:v13.4",
+        "sto_combination_threshold": 0.023,
+        "type": "sto",
+        "clip": 81,
+        "qst_gamma": 1.0,
+        "qst_delta": 1.6
+    },
+    "matcher": {
+        "version": "matching-umd:v15.4",
+        "configurations": [
+            {
+                "mt_type": "EdiNMT",
+                "index_type": "PSQ_comb_v3.1_pmf1e-5_stemEN_part_flat",
+                "config_name": "psqinter_PSQ",
+                "type": "nbest_linear_psq",
+                "format": "tsv",
+                "nbest_indexes": [
+                    "3S/IARPA_MATERIAL_OP2-3S/EVAL/text/index_store/indexing-umd-v7.9/indexing_params_v1.0/text/mt_store/scriptsmt-systems-v24.0.0_sent-split-v5.0/best/indri_T_N"
+                ],
+                "cutoff": 300,
+                "indexes": [
+                    "3S/IARPA_MATERIAL_OP2-3S/EVAL/text/index_store/indexing-umd-v7.9/indexing_params_v1.0/text/src/indri_T_N"
+                ],
+                "aqwv": 0.76,
+                "sto_threshold": 0.0,
+                "sto_gamma": 1.0
+            },
+            {
+                "indexes": [
+                    "3S/IARPA_MATERIAL_OP2-3S/EVAL/text/index_store/indexing-umd-v7.9/indexing_params_v1.0/text/src/indri_T_N"
+                ],
+                "config_name": "hmm_PSQ",
+                "index_type": "PSQ_comb_v3.1_pmf1e-5_stemEN_part_flat",
+                "cutoff": 300,
+                "type": "bbn_text_fast",
+                "format": "tsv",
+                "aqwv": 0.75,
+                "sto_threshold": 0.0,
+                "sto_gamma": 1.0
+            },
+            {
+                "type": "indri",
+                "cutoff": 300,
+                "index_type": "PSQ_comb_v3.1_pmf1e-5_phrases_sdm_ptable-comb_v3.1_pmf1e-5_part_flat",
+                "format": "tsv",
+                "indexes": [
+                    "3S/IARPA_MATERIAL_OP2-3S/EVAL/text/index_store/indexing-umd-v7.9/indexing_params_v1.0/text/src/indri_T_N"
+                ],
+                "config_name": "indri_PSQ",
+                "aqwv": 0.67,
+                "sto_threshold": 0.0,
+                "sto_gamma": 1.0
+            },
+            {
+                "type": "nbest_linear",
+                "cutoff": 300,
+                "indexes": [
+                    "3S/IARPA_MATERIAL_OP2-3S/EVAL/text/index_store/indexing-umd-v7.9/indexing_params_porter_stemmer_v2.0/text/mt_store/scriptsmt-systems-v24.0.0_sent-split-v5.0/best/indri_T_N/"
+                ],
+                "config_name": "indriinter",
+                "index_type": "NYTCCNews_wordsExpandedDupTFIDFPhrasesWeights:5:10:2:0.75",
+                "mt_type": "EDINMT",
+                "format": "tsv",
+                "aqwv": 0.53,
+                "sto_threshold": 0.0,
+                "sto_gamma": 1.0
+            },
+            {
+                "format": "tsv",
+                "indexes": [
+                    "3S/IARPA_MATERIAL_OP2-3S/EVAL/text/src"
+                ],
+                "cutoff": 300,
+                "index_type": "words_part_flat",
+                "config_name": "text_seclr",
+                "type": "seclr_rt",
+                "aqwv": 0.48,
+                "sto_threshold": 0.0,
+                "sto_gamma": 1.0
+            }
+        ]
+    },
+    "submission_type": "contrastive",
+    "query_processor": {
+        "query_list_path": [
+            "3S/IARPA_MATERIAL_OP2-3S/query_store/query-analyzer-umd-v17.0/QUERY2/"
+        ],
+        "version": "query-analyzer-umd:v17.0",
+        "target_language": "fa",
+        "psq_keys" : [
+            "PSQ_comb_v3.1_pmf1e-5_part_flat"
+        ]
+    }
+}

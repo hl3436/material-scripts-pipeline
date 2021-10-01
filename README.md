@@ -42,7 +42,9 @@ $ docker load --input scripts-smt.tar
 
 ## Running the SCRIPTS System
 
-### Data preparation
+Note: please checkout the turorial in the `example/workspace-fa/README.md`.
+
+### Input preparation
 The system requires a workspace directory with a specific directory structure:
 ```sh
 SOME_WORKSPACE
@@ -52,13 +54,13 @@ SOME_WORKSPACE
 │   ├── ...
 │   └── confn.json
 ├── NIST-data
+│   └── ...
 └── properties
     └── scripts.properties
 ```
 - `configs`: should contain configuration files. Example configuration files for each language are provided under `example/configs` directory.
 - `NIST-data`: should contain input data in material format. Intermediate process data is also stored in this directory.
-- `propertis/scripts.properties`: system wide configuration file that specifies versions, GPU resources, etc. Example `scripts.properties` is provided under `example/properties`.
-
+- `propertis/scripts.properties`: system wide configuration file that specifies versions, GPU resources, etc. Example `scripts.properties` is provided under `example/workspace-fa/properties`.
 
 ### Run
 ```sh
