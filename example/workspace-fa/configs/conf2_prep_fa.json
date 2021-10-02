@@ -7,7 +7,7 @@
         ]
     },
     "corpora": {
-        "root_absolute_path": "/local/nlp/nlp/workspace-fa",
+        "root_absolute_path": "/local/nlp/workspace-fa",
         "relative_path": "NIST-data",
         "queries": [
             {
