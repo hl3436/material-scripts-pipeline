@@ -74,6 +74,13 @@ $ docker run --rm -it --name scripts-pipeline --gpus all \
 ```
 
 
+## Build
+Run command below to build a new docker image
+```sh
+$ docker build -t scripts-pipeline:v1.5 .
+```
+
+
 
 ## Compontents
 ### Source Codes

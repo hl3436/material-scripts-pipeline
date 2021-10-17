@@ -6,7 +6,7 @@
     
     <property name="app.name" value="scripts"/>
     <property name="app.version" value="0.1"/>
-    <property name="release.name" value="${app.name}-release-${current.date}-${app.version}"/>
+    <property name="release.name" value="${app.name}-release-20210929-${app.version}"/>
     <property name="manual.name" value="${app.name}-UserManual.pdf"/>
     
     <property name="src.main.name" value="edu.columbia.dsi.SCRIPTS"/>
